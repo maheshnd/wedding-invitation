@@ -1,0 +1,172 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff; /* Ensure a clean background for the card */
+}
+
+.card-container {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  width: 350px;
+  height: 550px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 3px solid #ff5733;
+  background-image: url("./assets/image.png"); /* Replace with the path to your image */
+  background-size: cover; /* Ensures the image covers the card */
+  background-position: center; /* Centers the image */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background: linear-gradient(to bottom, #ff6f61, #ff9a9e);
+  color: #fff;
+  text-align: center;
+  border-bottom: 3px solid #ff5733;
+}
+
+.card-back {
+  background: linear-gradient(to bottom, #ffe4c4, #ffe2a2);
+  color: #333;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: rotateY(180deg);
+}
+
+.card-back .event-info {
+  margin-top: 10px;
+}
+
+.card-back p {
+  font-size: 15px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.card-back .map-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.card-back .map-title {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card-back .map {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.card-back .back-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-back .back-button:hover {
+  background-color: #e65c53;
+}
+
+.card-title,
+.card-subtitle,
+.names,
+.click-text,
+.back-title {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.names {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+.click-text {
+  margin-top: 15px;
+  font-size: 1.3em;
+  color: #555;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.closing-text {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+/* New CSS for Timer Overlay */
+.timer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.timer {
+  color: b;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 2;
+  margin-top: 310px;
+}
+
+.card-back img {
+  width: 200px; /* Set a fixed width for the circle */
+  height: 200px; /* Match height with width for a perfect circle */
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image fits inside the circle */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add some shadow for effect */
+  margin: 0 auto; /* Center the image horizontally */
+}
